@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block content %}
+
+{% if request.session.Email %}
+    
+<div class="container  ">
+        <figure class="card  card-product-grid">
+        
+            
+            <img class="img-responsive  justify-center" src="{% static 'img/upload.png' %}" alt="#"/>
+            
+        
+            <a href="#" class="btn btn-block btn-primary ">Upload Note </a>
+       
+    </figure>
+    </div>
+    {% else %}
+    <img class= "w-50 justify-center mx-40" src="{% static 'img/error.png' %}" alt="">     
+     {% endif %}
+
+    
+
+{% endblock %}

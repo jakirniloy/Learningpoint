@@ -1,0 +1,95 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block content %}
+{% if request.session.Email %}
+<section class="section-content padding-y">
+    <div class="container">
+    
+    <div class="row">
+        <aside class="col-md-2">
+           
+    <!-- Large button groups (default and split) -->
+  
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">Home</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'notes'%}">My Notes</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'mylibrary'%}">My Library</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'upload'%}">Upload</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'lstore'%}">Learningpoint Store</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'privacy'%}">Privacy Policy</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'term'%}">Terms and Conditions</a>
+            </div>
+        </div>
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper">
+            <!-- Top navigation-->
+           
+    
+        </aside> <!-- col.// -->
+        <main class="col-md-9">
+    
+    <header class="border-bottom mb-4 pb-3">
+        <h1>Add a Note</h1>
+        <h7> Get quick access to study resources for the courses you're in.</h7>
+    </header><!-- sect-heading -->
+
+    <figure class="card card-product-grid p-10 ">
+        
+            
+            <img src="{% static 'img/upload.png' %}" alt="#"/>
+            
+        
+        <figcaption class="info-wrap">
+            <a href="#" class="btn btn-block btn-primary">Add a note </a>
+        </figcaption>
+    </figure>
+    <br>
+    <br>
+    <h1>Choose your pricing plan</h1>
+    <div class="card-group">
+        
+        <figure class="card card-product-grid p-10 "> 
+                <img src="{% static 'img/add1.png' %}" alt="#"/>
+                <h4>Features</h4>
+                <h6>1.Purchase 1 Note in a day. <br>
+                2.Upload 1 Note in a day.<br>
+                </h6>
+            <figcaption class="info-wrap">
+                <a href="#" class="btn btn-block btn-primary">Payment </a>
+            </figcaption>
+        </figure>
+
+        <figure class="card card-product-grid p-10 ">
+                <img src="{% static 'img/add2.png' %}" alt="#"/>
+                <h4>Features</h4>
+                <h6>1.Purchase 5 Note in a day. <br>
+                    2.Upload 5 Note in a day.<br>
+                    3.A experts appointment once in 3 days.<br>
+                    3.Take test in a day.  
+                    </h6>
+            <figcaption class="info-wrap">
+                <a href="#" class="btn btn-block btn-primary">Payment </a>
+            </figcaption>
+        </figure>
+        <figure class="card card-product-grid p-10 ">
+            <img src="{% static 'img/add3.png' %}" alt="#"/>
+            <h4>Features</h4>
+            <h6>1.Purchase 10 Note in a day. <br>
+                2.Upload 10 Note in a day.<br>
+                3.1 experts appointment in a days.<br>
+                4.Unlimited test in a day.<br>
+                5.Certification.  
+                </h6>
+            <figcaption class="info-wrap">
+                <a href="#" class="btn btn-block btn-primary">Payment </a>
+            </figcaption>
+        </figure>
+      </div>
+      {% else %}
+     <img class= "w-50 justify-center mx-40" src="{% static 'img/error.png' %}" alt="">     
+     {% endif %}
+{% endblock %}

@@ -1,0 +1,333 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block content %}
+{% if request.session.Email %}
+<div class="lg:flex">
+   <div class="lg:w-1/2 xl:max-w-screen-sm">
+       <div class="py-12  lg:bg-white flex justify-center lg:justify-start lg:px-12">
+           <div class="cursor-pointer flex items-center">
+               <div>
+                   
+               </div>
+               
+           </div>
+       </div>
+      
+       <div class="mt-10 px-12 py-5 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
+           <h2 class=" text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
+           xl:text-bold">Hey!!{{UserDetails.username}}</h2>
+           <div class="mt-12">
+               <form class="POST">
+                 <div class=" text-6xl font-display font-semibold text-gray-700 ">
+                   Have a good Journey with Us.
+               </div>
+                  
+               </form>
+               
+           </div>
+       </div>
+       
+   </div>
+   <div class="hidden lg:flex items-center justify-center bg-indigo-80 flex-1 h-screen">
+       <div class="max-w-xs transform duration-200 hover:scale-110 cursor-pointer">
+           <img src="{% static 'users/css/img/hero-img.png' %}" class="image max-w-screen-sm" alt="" c />
+       </div>
+   </div>
+</div>
+{% else %}
+        <div class="lg:flex">
+            <div class="lg:w-1/2 xl:max-w-screen-sm">
+                <div class="py-12  lg:bg-white flex justify-center lg:justify-start lg:px-12">
+                    <div class="cursor-pointer flex items-center">
+                        <div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="mt-10 px-12 py-5 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
+                    <h2 class=" text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
+                    xl:text-bold">We have the best intention at heart to help you to grow your knowledge.</h2>
+                    <div class="mt-12">
+                        <form class="POST">
+                          <div class="mt-12 text-sm font-display font-semibold text-gray-700 ">
+                            Join with us and have fun studying.
+                        </div>
+                        
+                            <div class="mt-10">
+                                
+                                   <a   class="bg-indigo-500 text-gray-100 p-3  w-full rounded-full tracking-wide
+                                   font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600
+                                   shadow-lg"  href="{% url 'Reg'%}">Get Started </a>  
+
+                               
+                            </div>
+                           
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center justify-center bg-indigo-80 flex-1 h-screen">
+                <div class="max-w-xs transform duration-200 hover:scale-110 cursor-pointer">
+                    <img src="{% static 'users/css/img/hero-img.png' %}" class="image max-w-screen-sm" alt="" c />
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <!-- three_box  -->
+    <div id="service" class="three_box">
+        <div class="container">
+           <div class="row">
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                 <div class="Soft-box">
+                    
+                    <i><img src="{% static 'img/service1.png' %}" alt="#" /></i>
+                    <h3> Software</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable contentt has a more-or-less norf letters,</p>
+                 </div>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                 <div class="Soft-box">
+                    <i><img src="{% static 'img/service2.png' %}" alt="#" /></i>
+                    <h3>For Mobile</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable contentt has a more-or-less norf letters,</p>
+                 </div>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                 <div class="Soft-box">
+                    <i><img src="{% static 'img/service3.png' %}" alt="#" /></i>
+                    <h3>For Computer</h3>
+                    <p>It is a long established fact that a reader will be distracted by the readable contentt has a more-or-less norf letters,</p>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <!-- end three_box -->
+     <section class="section-name padding-y-sm">
+      <div class="container">
+      
+      <header class="section-heading py-5">
+        <br>
+        <br>
+         <h2 class="section-title text-indigo-500 font-bold text-4xl">Popular Course's</h2>
+      </header><!-- sect-heading -->
+      
+         
+      <div class="row">
+         <div class="col-md-3 py-4">
+            <div class="card card-product-grid">                          
+               <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'img/c.png' %}"> </a>
+               <figcaption class="info-wrap">
+                  <a href="./product-detail.html" class="title">Just another product name</a>
+                  <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+               </figcaption>
+            </div>
+         </div> <!-- col.// -->
+         <div class="col-md-3 py-4">
+            <div class="card card-product-grid">
+               <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'img/c++.png' %}"> </a>
+               <figcaption class="info-wrap">
+                  <a href="./product-detail.html" class="title">Some item name here</a>
+                  <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
+               </figcaption>
+            </div>
+         </div> <!-- col.// -->
+         <div class="col-md-3 py-4">
+            <div class="card card-product-grid">
+               <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'img/html.png' %}"> </a>
+               <figcaption class="info-wrap">
+                  <a href="./product-detail.html" class="title">Great product name here</a>
+                  <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
+               </figcaption>
+            </div>
+         </div> <!-- col.// -->
+         <div class="col-md-3 py-4">
+            <div class="card card-product-grid">
+               <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'img/java.png' %}"> </a>
+               <figcaption class="info-wrap">
+                  <a href="./product-detail.html" class="title">Just another product name</a>
+                  <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+               </figcaption>
+            </div>
+         </div> <!-- col.// -->
+       
+      
+      </div><!-- container // -->
+      </section>
+    <!-- Asked -->
+    <div  class="asked_main">
+        <div class="container">
+           <div class="row">
+              <div class="col-md-12 py-10">
+                 <div class="titlepage">
+                    <h2>Frequently Asked <span class="text-indigo-600"> Questions</span></h2>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="container-fluid">
+           <div class="row">
+              <div class="col-md-6">
+                 <div class="ask_img">
+                    
+                    <figure class="w-50% px-3"><img src="{% static 'img/Question.png' %}" alt="#"/></figure>
+                 </div>
+              </div>
+              <div class="col-md-6">
+                 <div class="ask_box">
+                    <div class="simpaly">
+                       <div class="slider"><span>+</span>  <h3 class="text-white">
+                        Why is simply dummy text of the printing my text of the</h3>
+                       </div>
+                       <div class="content">
+                          <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its l
+                             ore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages 
+                          </p>
+                       </div>
+                    </div>
+                    <div class="simpaly">
+                     <div class="slider"><span>+</span>  <h3 class="text-white">
+                        Why is simply dummy text of the printing my text of the</h3>
+                       </div>
+                       <div class="content">
+                          <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its l
+                             ore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages 
+                          </p>
+                       </div>
+                    </div>
+                    <div class="simpaly">
+                     <div class="slider"><span>+</span>  <h3 class="text-white">
+                        Why is simply dummy text of the printing my text of the</h3>
+                       </div>
+                       <div class="content">
+                          <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its l
+                             ore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages 
+                          </p>
+                       </div>
+                    </div>
+                    <div class="simpaly">
+                     <div class="slider"><span>+</span>  <h3 class="text-white">
+                        Why is simply dummy text of the printing my text of the</h3>
+                       </div>
+                       <div class="content">
+                          <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its l
+                             ore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages 
+                          </p>
+                       </div>
+                    </div>
+                    <div class="simpaly">
+                     <div class="slider"><span>+</span>  <h3 class="text-white">
+                        Why is simply dummy text of the printing my text of the</h3>
+                       </div>
+                       <div class="content">
+                          <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its l
+                             ore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages 
+                          </p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     </div>
+     <!-- end Asked -->
+    <!-- contact testimonial-->
+
+    <div id="contact" class="contact">
+        <div class="container">
+           <div class="row">
+              <div class="col-md-6">
+                <figure class="w-70% px-3"><img src="{% static 'img/mail.png' %}" alt="#"/></figure>
+                 
+              </div>
+              <div class="col-md-6">
+                
+                 <form class="main_form" method="POST">
+                  {% csrf_token %}
+                    <div class="titlepage">
+                        <h2><span class="white">Contact</span> <span class="white">Us</span></h2>
+                     </div>
+                    <div class="row">
+                       <div class="col-sm-12">
+                          <input class="contactus" placeholder="Full Name" type="text" name="Name">
+                       </div>
+                       <div class="col-sm-12">
+                          <input class="contactus" placeholder="Email" type="text" name=" Email">
+                       </div>
+                       <div class="col-sm-12">
+                          <input class="contactus" placeholder="Subject" type="text" name="Subject">
+                       </div>
+                       <div class="col-sm-12">
+                          <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                       </div>
+                       <div class="col-sm-12">
+                          <button class="send" type="submit">Send</button>
+                       </div>
+                    </div>
+                 </form>
+              </div>
+           </div>
+        </div>
+     </div>
+     <!-- end contact -->
+     
+
+           <!-- Javascript files-->
+           
+           <script src="{% static 'js/jquery.min.js' %}"></script>
+           <script src="{% static 'js/popper.min.js' %}"></script>
+           <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+           <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+           <script src="{% static 'js/plugin.js ' %}"></script>
+           <!-- sidebar -->
+           <script src=" {% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+           <script src="{% static 'js/custom.js' %}"></script>
+           <script src="{% static 'js/owl.carousel.min.js ' %}"></script>
+           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+           <script>
+              $(document).ready(function() {
+                var owl = $('.owl-carousel');
+                owl.owlCarousel({
+                  margin: 10,
+                  nav: true,
+                  loop: true,
+                  responsive: {
+                    0: {
+                      items: 1
+                    },
+                    600: {
+                      items: 2
+                    },
+                    1000: {
+                      items: 3
+                    }
+                  }
+                })
+              })
+           </script>
+           
+           <script>
+              $('.content').hide();
+              
+              $('.slider').click(function() {
+              $(this).next('.content').slideToggle();
+              this.toggle = !this.toggle;
+              $(this).children("span").text(this.toggle ? "-" : "+");
+              return false;
+              });
+           </script>
+
+
+       
+    </body>
+    
+    
+
+
+    
+</html>
+{% endblock %}

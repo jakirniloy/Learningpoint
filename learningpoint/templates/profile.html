@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block content %}
+{% if request.session.Email %}
+    <h1 class="p-24">{{request.session.Email}}</h1>
+    {% else %}
+    <img class= "w-50 justify-center mx-40" src="{% static 'img/error.png' %}" alt="">     
+     {% endif %}
+
+
+{% endblock %}
