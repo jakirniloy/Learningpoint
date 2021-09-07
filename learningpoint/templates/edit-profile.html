@@ -1,0 +1,123 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static%}
+<style>
+
+.profile-img img{
+    height: 120px;
+} 
+.hee h3{
+   
+    height: 40px;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+</style>
+{% for user in users %}
+<div class="hee" >
+    <h3 >Edit Your Profile</h3>
+</div>
+
+<hr>
+<br>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- style src url [Extra Bootstrap]-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+          
+    <div class="col-md-4 align-content-center">
+                        
+        <div class="profile-img">
+          
+            {% if user.image %}
+            <img src="{{user.image.url}}" alt="{{user.email}}"  style="border: 5px solid lightblue; padding: 0.5em; margin-bottom: 1.5em;"/>
+            {% else %}
+            <img src="{% static 'img/avatar.png' %}" alt="{{user.email}}" height="130"
+                style="border: 5px solid lightblue; padding: 0.5em; margin-bottom: 1.5em;">
+            {% endif %}
+           
+        </div>
+        
+    <div class="form-group row">
+        <label for="editPhoto" class="col-sm-2 col-form-label"><b>Display Photo</b></label>
+        <div class="col-sm-10">
+            <input type="file" class="form-control" id="editPhoto" placeholder="Choose a file"  name="editPhoto">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputFirstName" class="col-sm-2 col-form-label"><b>First Name</b></label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputFirstName" placeholder="e.g: Alice Doe"
+                name="editFirstName" required value="{{user.firstName}}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputLastName" class="col-sm-2 col-form-label"><b>Last Name</b></label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputLastName" placeholder="e.g: Alice Doe" name="editLastName"
+                required value="{{user.lastName}}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPhoneNumber" class="col-sm-2 col-form-label"><b>Phone Number</b></label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputPhoneNumber" placeholder="e.g: Alice Doe"
+                name="editPhoneNumber" required value="{{user.phoneNumber}}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputEmail" class="col-sm-2 col-form-label"><b>Email Address</b></label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail" placeholder="email@example.com" name="editEmail"
+                required value="{{user.Email}}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputUsername" class="col-sm-2 col-form-label"><b>Username</b></label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputUsername" placeholder="Alice [No space] "
+                name="editUsername" required value="{{user.Username}}">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="expertSection" class="col-sm-2 col-form-label"><b>Expertism</b></label>
+        <div class="col-sm-10">
+            <select name="editExpert" selected="{{user.expert}}" id="expert-in" required>
+                <option disabled="true">--- Select your expertism ---</option>
+                <option value="C Programming">C Programming</option>
+                <option value="C++">C++</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+                <option value="Django">Django</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="PHP">PHP</option>
+                <option value="Flutter">Flutter</option>
+                
+            </select>
+        </div>
+       
+
+    </div>
+
+    <div>&ensp;</div>
+
+    <button type="submit" class="btn btn-outline-primary" name="edit-profile">Update Profile</button>
+    {% if messages %}
+    {% for result in messages %}
+    <div>&ensp;</div>
+    <h5 style="color: rgb(24, 130, 192);">{{result}}</h5>
+    {% endfor %}
+    {% endif %}
+</form>
+{% endfor %}
+
+{% endblock %}

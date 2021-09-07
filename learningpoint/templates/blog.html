@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block content %}
+<style>
+    .hr{
+       text-align: center;
+    }
+</style>
+<h6></h6>
+<h3 class="hr">My Posts</h3>
+<hr>
+{% if questions|length %}
+
+{% for qstn in questions %}
+<div class="row">
+    {% for user in users %}
+    <div class="col-1"></div>
+    <div class="col-8">
+        {% if user.image %}
+        <img src="{{user.image.url}}" height="26px" width="26px"
+            alt="image" />&ensp;{{qstn.publisherName}}
+        {% else %}
+        <img src="{% static 'img/avatar.png' %}" height="26px" width="26px"
+        alt="image" />&ensp;{{qstn.publisherName}}
+        {% endif %}
+    </div>
+</div>
+{% endfor %} 
+
+
+
+
+<p></p>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-8">
+        <h4>{{qstn.title}}</h4>
+    </div>
+    
+    <div class="col-1"></div>
+</div>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-8">
+        <p
+            style="overflow: hidden; text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+            {{qstn.description}}</p>
+    </div>
+    <div class="col-2"><button type="button" class="btn btn-outline-primary">&ensp;&ensp;View&ensp;&ensp;</button>
+    </div>
+    <div class="col-1"></div>
+</div>
+<hr>
+{% endfor %}
+{% else %}
+<div class="custom-center">
+    <br>
+    <h5> Sorry! You haven't post any question yet.</h5>
+</div>
+
+{% endif %}
+{% endblock %}

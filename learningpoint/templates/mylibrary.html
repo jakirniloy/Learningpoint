@@ -2,10 +2,193 @@
 {% load static%}
 
 {% block content %}
-{% if request.session.Email %}
-<h1 class="p-24">Its the page where I will show my purchased notes</h1>
-{% else %}
-    <img class= "w-50 justify-center mx-40" src="{% static 'img/error.png' %}" alt="">     
-     {% endif %}
 
+
+<!-- ========================= SECTION PAGETOP ========================= -->
+
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+<div class="container">
+
+
+
+<header class="border-bottom mb-4 pb-3">
+	<h1>My Library</h1>
+</header><!-- sect-heading -->
+
+<div class="row">
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> 
+				
+				<figure class="w-50% px-3"><img src="{% static 'img/c.png' %}" alt="#"/></figure>
+				
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="./product-detail.html" class="title">C Programming</a>
+					<div class="price-wrap mt-2">
+						<span class="price">$120</span>
+						<del class="price-old">$190</del>
+					</div> <!-- price-wrap.// -->
+				</div>
+				<a href="#" class="btn btn-block btn-success">Added to cart </a>
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> 
+				<figure class="w-50% px-3"><img src="{% static 'img/c++.png' %}" alt="#"/></figure>
+				
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="./product-detail.html" class="title">C++ </a>
+					<div class="price-wrap mt-2">
+						<span class="price">$128</span>
+					</div> <!-- price-wrap.// -->
+				</div>
+				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> 
+				<figure class="w-50% px-3"><img src="{% static 'img/html.png' %}" alt="#"/></figure>
+				
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="./product-detail.html" class="title">HTML 5</a>
+					<div class="price-wrap mt-2">
+						<span class="price">$110</span>
+					</div> <!-- price-wrap.// -->
+				</div>
+				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> 
+				<figure class="w-50% px-3"><img src="{% static 'img/JAVA.png' %}" alt="#"/></figure>
+				
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="./product-detail.html" class="title">JAVA</a>
+					<div class="price-wrap mt-2">
+						<span class="price">$115</span>
+					</div> <!-- price-wrap.// -->
+				</div>
+				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> 
+				<figure class="w-50% px-3"><img src="{% static 'img/js.png' %}" alt="#"/></figure>
+				
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="./product-detail.html" class="title">JavaScript</a>
+					<div class="price-wrap mt-2">
+						<span class="price">$115</span>
+					</div> <!-- price-wrap.// -->
+				</div>
+				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> 
+				<figure class="w-50% px-3"><img src="{% static 'img/Python.png' %}" alt="#"/></figure>
+				
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="./product-detail.html" class="title">Python</a>
+					<div class="price-wrap mt-2">
+						<span class="price">$140</span>
+					</div> <!-- price-wrap.// -->
+				</div>
+				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> 
+				<figure class="w-50% px-3"><img src="{% static 'img/php.png' %}" alt="#"/></figure>
+				
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="./product-detail.html" class="title">PHP</a>
+					<div class="price-wrap mt-2">
+						<span class="price">$105</span>
+					</div> <!-- price-wrap.// -->
+				</div>
+				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> 
+				<figure class="w-50% px-3"><img src="{% static 'img/sql.png' %}" alt="#"/></figure>
+				
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="./product-detail.html" class="title">SQL</a>
+					<div class="price-wrap mt-2">
+						<span class="price">$125</span>
+					</div> <!-- price-wrap.// -->
+				</div>
+				<a href="#" class="btn btn-block btn-primary">Add to cart </a>	
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+</div> <!-- row end.// -->
+
+
+<nav class="mt-4" aria-label="Page navigation sample">
+  <ul class="pagination">
+    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
+
+	</main> <!-- col.// -->
+
+</div>
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+
+
+
+
+</body>
+</html>
 {% endblock %}

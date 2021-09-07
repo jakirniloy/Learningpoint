@@ -45,8 +45,11 @@
     <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
              <div class="d-flex justify-content-end mb-3 mb-lg-0">
                 {% if request.session.Email %}
+                
                 <div class="widget-header">
-                  <small class="title text-muted">Welcome <a href="{% url 'Home'%}">{{request.session.Email}}</a> </small>
+                  
+                  <small class="title text-muted">Welcome <br> <a href="{% url 'Home'%}">{{request.session.Email}}</a> </small>
+                  
                   <div> 
                      <a href="{% url 'profile'%}">Profile</a> <span class="dark-transp"> | </span>
                      <a href="{% url 'Logout'%}"> Logout</a>

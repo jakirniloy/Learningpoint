@@ -4,18 +4,147 @@
 {% block content %}
 
 {% if request.session.Email %}
+<style>
+        body {
+  font-family: sans-serif;
+ 
+}
+
+.file-upload {
+  background-color: #ffffff;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #337bda;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #337bda;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #337bda;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #337bda;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #337bda;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #337bda;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+</style>
+
+
     
-<div class="container  ">
-        <figure class="card  card-product-grid">
-        
-            
-            <img class="img-responsive  justify-center" src="{% static 'img/upload.png' %}" alt="#"/>
-            
-        
-            <a href="#" class="btn btn-block btn-primary ">Upload Note </a>
-       
-    </figure>
+<body>
+    
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <div class="file-upload">
+      <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Note</button>
+    
+      <div class="image-upload-wrap">
+        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+        <div class="drag-text">
+          <h3>Drag and drop a file or select add File</h3>
+        </div>
+      </div>
+      <div class="file-upload-content">
+        <img class="file-upload-image" src="#" alt="your image" />
+        <div class="image-title-wrap">
+          <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+        </div>
+      </div>
     </div>
+        
     {% else %}
     <img class= "w-50 justify-center mx-40" src="{% static 'img/error.png' %}" alt="">     
      {% endif %}

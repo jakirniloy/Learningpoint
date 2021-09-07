@@ -25,6 +25,16 @@ class Newusers(models.Model):
         db_table='learningpoint_newusers'
 
     def isExists(self):
-        if UserRegister.objects.filter(email=self.email):
+        if Newusers.objects.filter(Email=self.Email):
             return True
-        return False   
+        return False 
+
+class Userpost(models.Model):
+    publisherId = models.CharField(max_length=20)
+    publisherName = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=3072)
+    created_at = models.DateTimeField(default=datetime.now)
+
+    class Meta:
+        db_table = 'users_post'  

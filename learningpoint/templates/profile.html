@@ -1,12 +1,236 @@
 {% extends 'base.html'%}
+{% block content %}
 {% load static%}
 
-{% block content %}
-{% if request.session.Email %}
-    <h1 class="p-24">{{request.session.Email}}</h1>
-    {% else %}
-    <img class= "w-50 justify-center mx-40" src="{% static 'img/error.png' %}" alt="">     
-     {% endif %}
+
+<style>
+    body{
+    background: -webkit-linear-gradient(left, hsl(0, 0%, 100%), rgb(255, 255, 255));
+}
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+.profile-img{
+    text-align: center;
+}
+.profile-img img{
+    width: 70%;
+    height: 100%;
+}
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.profile-head h5{
+    color: rgb(7, 7, 7);
+}
+.profile-head h6{
+    color: #0062cc;
+}
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+.proile-rating{
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+.proile-rating span{
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
+.profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+}
+.profile-head .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom:2px solid #0062cc;
+}
+.profile-work{
+    padding: 14%;
+    margin-top: -15%;
+}
+.profile-work p{
+    font-size: 12px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: 10%;
+}
+.profile-work a{
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+}
+.profile-work h4{
+    text-decoration: none;
+    color: #579ce0;
+    font-weight: 600;
+    
+}
+.profile-work ul{
+    list-style: none;
+}
+.profile-tab label{
+    font-weight: 600;
+}
+.profile-tab p{
+    font-weight: 600;
+    color: #0062cc;
+}
+</style>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+{% for user in users %}
+<div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        
+                        <div class="profile-img">
+                            <!-- {% if user.image %} -->
+                            <!-- <img src="{{user.image.url}}" alt="{{user.email}}"  style="border: 5px solid rgb(197, 206, 209); padding: 0.5em; margin-bottom: 1.5em;"/>
+                            -->
+                            
+                            <!-- <img src="{% static 'img/avatar2.png' %}" alt="{{user.email}}"  style="border: 5px solid rgb(197, 206, 209); padding: 0.5em; margin-bottom: 1.5em;"/>
+                            {% endif %}
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file"/>
+                            </div> -->
+                            {% if user.image %}
+                            <img src="{{user.image.url}}" alt="{{user.email}}"  style="border: 5px solid lightblue; padding: 0.5em; margin-bottom: 1.5em;"/>
+                            {% else %}
+                            <img src="{% static 'img/avatar.png' %}" alt="{{user.email}}" height="130"
+                                style="border: 5px solid lightblue; padding: 0.5em; margin-bottom: 1.5em;">
+                            {% endif %}
+                           
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        {{user.firstName}} {{user.lastName}}
+                                    </h5>
+                                    <h6>
+                                       Noivce
+                                    </h6>
+                                   
+                                    
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="mt-10">
+                                
+                            <a   class="bg-indigo-500 text-white p-3  w-full rounded-full tracking-wide
+                            font-semibold font-display focus:outline-none focus:shadow-outline "  href="{% url 'edit-profile'%}">Edit Profile </a>  
+                     </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                           
+                            <p>Expert in</p>
+                            <a href="">{{user.expert}}</a><br/>
+                          
+                        </div>
+                        <div class="profile-work">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p>Point</p>
+                               
+                                    <h4>{{user.point}}</h4>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>User Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{user.Username}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{user.firstName}} {{user.lastName}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{user.Email}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{user.phoneNumber}}</p>
+                                            </div>
+                                        </div>
+                                       
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </form> 
+            {% endfor %}        
+        </div>
+
+
+
+
 
 
 {% endblock %}

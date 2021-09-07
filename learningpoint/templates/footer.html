@@ -1,13 +1,35 @@
 <!--  footer -->
 {% load static%}
 <footer>
-    <div class="footer">
+    <div class=" footer mt-auto py-3 bg-light text-muted text-center bg-white">
        <div class="container">
           <div class="row">
              <div class="col-md-12">
-                <p class="text-info text-">© 2021 All Rights Reserved. <a href="https://jakirniloy.me/">Learningpoint Team</a></p>
+               <p class="mb-1">&copy; 2021 <a href="https://jakirniloy.github.io" target="_blank">Learningpoint Team</a> - All
+                  rights
+                  reserved </p>
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href="{% url 'privacy'%}">Privacy Policy</a></li>
+                  <li class="list-inline-item"><a href="{% url 'term'%}">Terms & Conditions</a></li>
+                  <li class="list-inline-item"><a href="">Support</a></li>
+              </ul>
              </div>
           </div>
        </div>
     </div>
  </footer>  
+
+
+ <!--  <footer class="footer mt-auto py-3 bg-light text-muted text-center text-small bg-info">
+   <div class="container">
+      
+       <p class="mb-1">&copy; 2021 <a href="https://jakirniloy.github.io" target="_blank">Learningpoint Team</a> - All
+           rights
+           reserved </p>
+       <ul class="list-inline">
+           <li class="list-inline-item"><a href="{% url 'privacy'%}">Privacy Policy</a></li>
+           <li class="list-inline-item"><a href="{% url 'term'%}">Terms & Conditions</a></li>
+           <li class="list-inline-item"><a href="">Support</a></li>
+       </ul>
+   </div> 
+</footer> -->

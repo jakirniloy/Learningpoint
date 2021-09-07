@@ -1,8 +1,134 @@
-{% extends 'base.html'%}
-{% load static%}
 
-{% block content %}
-{% if request.session.Email %}
+<style>
+   .row.heading h2 {
+       color: #fff;
+       font-size: 52.52px;
+       line-height: 95px;
+       font-weight: 400;
+       text-align: center;
+       margin: 0 0 40px;
+       padding-bottom: 20px;
+       text-transform: uppercase;
+   }
+   ul{
+     margin:0;
+     padding:0;
+     list-style:none;
+   }
+   .heading.heading-icon {
+       display: block;
+   }
+   .padding-lg {
+      display: block;
+      padding-top: 60px;
+      padding-bottom: 60px;
+   }
+   .practice-area.padding-lg {
+       padding-bottom: 55px;
+       padding-top: 55px;
+   }
+   .practice-area .inner{ 
+        border:1px solid #999999; 
+       text-align:center; 
+       margin-bottom:28px; 
+       padding:40px 25px;
+   }
+   .our-webcoderskull .cnt-block:hover {
+       box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+       border: 0;
+   }
+   .practice-area .inner h3{ 
+       color:#3c3c3c; 
+      font-size:24px; 
+      font-weight:500;
+      font-family: 'Poppins', sans-serif;
+      padding: 10px 0;
+   }
+   .practice-area .inner p{ 
+       font-size:14px; 
+      line-height:22px; 
+      font-weight:400;
+   }
+   .practice-area .inner img{
+      display:inline-block;
+   }
+   
+   
+   .our-webcoderskull{
+     background: url("https://img.freepik.com/free-vector/blue-cyber-future-technology-concept-background_42077-488.jpg?size=626&ext=jpg") no-repeat center top / cover;
+     
+   }
+   .our-webcoderskull .cnt-block{ 
+      float:left; 
+      width:100%; 
+      background:#fff; 
+      padding:30px 20px; 
+      text-align:center; 
+      border:2px solid #d5d5d5;
+      margin: 0 0 28px;
+   }
+   .our-webcoderskull .cnt-block figure{
+      width:148px; 
+      height:148px; 
+      border-radius:100%; 
+      display:inline-block;
+      margin-bottom: 15px;
+   }
+   .our-webcoderskull .cnt-block img{ 
+      width:148px; 
+      height:148px; 
+      border-radius:100%; 
+   }
+   .our-webcoderskull .cnt-block h3{ 
+      color:#2a2a2a; 
+      font-size:20px; 
+      font-weight:500; 
+      padding:6px 0;
+      text-transform:uppercase;
+   }
+   .our-webcoderskull .cnt-block h3 a{
+     text-decoration:none;
+      color:#2a2a2a;
+   }
+   .our-webcoderskull .cnt-block h3 a:hover{
+      color:#337ab7;
+   }
+   .our-webcoderskull .cnt-block p{ 
+      color:#2a2a2a; 
+      font-size:13px; 
+      line-height:20px; 
+      font-weight:400;
+   }
+   .our-webcoderskull .cnt-block .follow-us{
+      margin:20px 0 0;
+   }
+   .our-webcoderskull .cnt-block .follow-us li{ 
+       display:inline-block; 
+      width:auto; 
+      margin:0 5px;
+   }
+   .our-webcoderskull .cnt-block .follow-us li .fa{ 
+      font-size:24px; 
+      color:#767676;
+   }
+   .our-webcoderskull .cnt-block .follow-us li .fa:hover{ 
+      color:#025a8e;
+   }
+   
+   </style>
+  
+  {% extends 'base.html'%}
+  {% load static%}
+   {% block content %}
+   {% if request.session.Email %}
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <!------ Include the above in your HEAD tag ---------->
+   
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <div class="lg:flex">
    <div class="lg:w-1/2 xl:max-w-screen-sm">
        <div class="py-12  lg:bg-white flex justify-center lg:justify-start lg:px-12">
@@ -158,81 +284,53 @@
       </div><!-- container // -->
       </section>
     <!-- Asked -->
-    <div  class="asked_main">
-        <div class="container">
-           <div class="row">
-              <div class="col-md-12 py-10">
-                 <div class="titlepage">
-                    <h2>Frequently Asked <span class="text-indigo-600"> Questions</span></h2>
-                 </div>
-              </div>
-           </div>
-        </div>
-        <div class="container-fluid">
-           <div class="row">
-              <div class="col-md-6">
-                 <div class="ask_img">
-                    
-                    <figure class="w-50% px-3"><img src="{% static 'img/Question.png' %}" alt="#"/></figure>
-                 </div>
-              </div>
-              <div class="col-md-6">
-                 <div class="ask_box">
-                    <div class="simpaly">
-                       <div class="slider"><span>+</span>  <h3 class="text-white">
-                        Why is simply dummy text of the printing my text of the</h3>
-                       </div>
-                       <div class="content">
-                          <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its l
-                             ore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages 
-                          </p>
-                       </div>
-                    </div>
-                    <div class="simpaly">
-                     <div class="slider"><span>+</span>  <h3 class="text-white">
-                        Why is simply dummy text of the printing my text of the</h3>
-                       </div>
-                       <div class="content">
-                          <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its l
-                             ore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages 
-                          </p>
-                       </div>
-                    </div>
-                    <div class="simpaly">
-                     <div class="slider"><span>+</span>  <h3 class="text-white">
-                        Why is simply dummy text of the printing my text of the</h3>
-                       </div>
-                       <div class="content">
-                          <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its l
-                             ore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages 
-                          </p>
-                       </div>
-                    </div>
-                    <div class="simpaly">
-                     <div class="slider"><span>+</span>  <h3 class="text-white">
-                        Why is simply dummy text of the printing my text of the</h3>
-                       </div>
-                       <div class="content">
-                          <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its l
-                             ore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages 
-                          </p>
-                       </div>
-                    </div>
-                    <div class="simpaly">
-                     <div class="slider"><span>+</span>  <h3 class="text-white">
-                        Why is simply dummy text of the printing my text of the</h3>
-                       </div>
-                       <div class="content">
-                          <p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its l
-                             ore-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages 
-                          </p>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
+    
+<section class="our-webcoderskull padding-lg align-middle">
+   <div class="container">
+     <div class="row heading heading-icon">
+         <h2>Our Team</h2>
      </div>
+     <ul class="row ">
+       <li class="col-12 col-md-6 col-lg-3 mx-16">
+           <div class="cnt-block equal-hight" style="height: 349px;">
+             <figure><img src="https://3.bp.blogspot.com/-P_qMx1hPnBM/YEpv_kbsiqI/AAAAAAAA2p0/mJ1TPJR4gKgZB3UhYQmZF5W4UjR9usYPwCK4BGAYYCw/s1600/52286661_2792678240957593_1876677421592215552_o.jpg" class="img-responsive" alt=""></figure>
+             <h3><a href="http://www.webcoderskull.com/">MD Jakir Hossain</a></h3>
+             <p>Web Developer</p>
+             <ul class="follow-us clearfix">
+               <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+               <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+             </ul>
+           </div>
+       </li>
+       <li class="col-12 col-md-6 col-lg-3">
+           <div class="cnt-block equal-hight" style="height: 349px;">
+             <figure><img src="https://scontent.fdac14-1.fna.fbcdn.net/v/t1.6435-9/s640x640/152318791_2879632135638518_3731400014385262386_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=174925&_nc_eui2=AeFSUhah2htuMQjRjcdlRK6dIksd1tEF_bAiSx3W0QX9sGiCdkHGuidnvF9xBoZ8GF6GBAnth7JH1nIaysuO0plP&_nc_ohc=1iTuMFdcX0IAX8wEmmn&tn=YTWb2oJfSiRAajKb&_nc_ht=scontent.fdac14-1.fna&oh=dfd5896d9cdd3bf3c2a1d4c161c5a0e1&oe=6156365B" class="img-responsive" alt=""></figure>
+             <h3><a href="#">Sarah Samiha zaman </a></h3>
+             <p>Web Developer</p>
+             <ul class="follow-us clearfix">
+               <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+               <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+             </ul>
+           </div>
+       </li>
+       <li class="col-12 col-md-6 col-lg-3 mx-16">
+           <div class="cnt-block equal-hight" style="height: 349px;">
+             <figure><img src="https://scontent.fdac14-1.fna.fbcdn.net/v/t1.6435-9/174417016_1688818761303477_614956804578670170_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeE6rYGn8CNIJmwYWWYwpiCW5e7zI2PmUJvl7vMjY-ZQm1vQHRpaCj_jc8PpItWXzYlbdBpAucisiHD6pRFGDM4j&_nc_ohc=JdryQ24243AAX8bI-3k&_nc_ht=scontent.fdac14-1.fna&oh=8c0f7e33d3022efc8189ba8f8dff85f9&oe=615430CC" class="img-responsive" alt=""></figure>
+             <h3><a href="http://www.webcoderskull.com/">Plabon Banik </a></h3>
+             <p>Web Developer</p>
+             <ul class="follow-us clearfix">
+               <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+               <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+             </ul>
+           </div>
+        </li>
+     
+     </ul>
+   </div>
+ </section>
      </div>
      <!-- end Asked -->
     <!-- contact testimonial-->
